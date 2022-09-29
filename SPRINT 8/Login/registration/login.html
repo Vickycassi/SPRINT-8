@@ -1,0 +1,53 @@
+{% extends 'Clientes/base.html' %} {% load static %} {% block title %}Iniciar
+Sesión | ITBANK{% endblock %} {% block styles %}
+<link rel="stylesheet" href="{% static 'Login/styles/login.css' %}" />
+{% endblock %} {% block content %}
+<!-- Form -->
+<section class="form-container">
+  <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-img">
+      <img
+        src="{% static 'Clientes/img/icons/ITBA-logo.svg' %}"
+        alt="Logo ITBA"
+      />
+    </div>
+    {% if form.errors %} {% for error in form.non_field_errors %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endfor %} {% endif %}
+    <div class="input-grupo">
+      <input
+        class="form-input"
+        id="username"
+        placeholder=" "
+        name="username"
+        type="text"
+        autocomplete="username"
+        required
+      />
+      <label class="form-label" for="username">Username</label>
+    </div>
+    <div class="input-grupo">
+      <input
+        class="form-input"
+        id="password"
+        placeholder=" "
+        name="password"
+        type="password"
+        autocomplete="current-password"
+        required
+      />
+      <div class="ojo-password abierto">
+        <img
+          src="{% static 'Login/img/icons/ojo-abierto-contraseña.svg' %}"
+          alt=""
+        />
+      </div>
+      <label class="form-label" for="password">Contraseña</label>
+    </div>
+    <a class="form-link" href="{% url 'signup' %}">¿No tenés una cuenta?</a>
+    <button class="form-btn" type="submit">Iniciar sesión</button>
+  </form>
+</section>
+<script src="{% static 'Login/js/login.js' %}"></script>
+{% endblock %}

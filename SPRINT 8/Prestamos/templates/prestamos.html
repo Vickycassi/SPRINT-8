@@ -1,0 +1,52 @@
+{% extends 'Clientes/base.html' %} {% load static %} {% block title %} ITBANK -
+Préstamos {% endblock %} {% block styles %}
+<link rel="stylesheet" href="{% static 'Prestamos/styles/prestamos.css' %}" />
+{% endblock %} {% block content %}
+<section class="form-container">
+  <form action="{% url 'prestamos' %}" method="POST">
+    {% csrf_token %}
+    <h1 class="subtitulo">Préstamos</h1>
+    <label for="tipo">Tipo del Préstamo</label>
+    <select class="form-input" name="tipo" id="tipo">
+      <option value="hipotecario">HIPOTECARIO</option>
+      <option value="prendario">PRENDARIO</option>
+      <option value="personal">PERSONAL</option>
+    </select>
+    <label for="fecha">Fecha de inicio del Préstamo</label>
+    <input class="form-input" id="fecha" name="fecha" type="date" />
+    <label for="monto">Monto del Préstamo</label>
+    <input class="form-input" id="monto" name="monto" type="number" />
+    {% if error %}
+    <div style="color: red">{{ error }}</div>
+    {% endif %}
+    <button class="form-btn" type="submit">Enviar</button>
+  </form>
+  <div class="prestamos-container">
+    <h1 class="subtitulo">Tus préstamos</h1>
+    {% if prestamos %}
+    <div class="prestamos-table">
+      <div class="prestamos-header">
+        <p>Fecha</p>
+        <p>Monto</p>
+        <p>Tipo</p>
+      </div>
+      {% for prestamo in prestamos %}
+      <div class="prestamo">
+        <p>{{ prestamo.loan_date }}</p>
+        <p>${{ prestamo.loan_total }}</p>
+        <p>{{ prestamo.loan_type }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="prestamo-vacio">
+      <p>Usted no ha tramitado préstamos aún.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+<script>
+  const today = new Date().toISOString().slice(0, 10);
+  document.getElementById("fecha").setAttribute("min", today);
+</script>
+{% include "Clientes/footer.html" %} {% endblock %}

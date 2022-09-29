@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 6rem auto 4rem auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  width: 25rem;
+}
+
+label {
+  color: white;
+}
+
+.form-input {
+  margin-bottom: 1.5rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: var(--bgColor);
+  border-bottom: rgb(168, 168, 168) 1px solid;
+  color: var(--textColor);
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.form-btn {
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--textColor);
+  font-weight: 600;
+  transition: transform ease-in 150ms;
+}
+
+.form-btn:hover {
+  transform: scale(1.03);
+  transition: transform ease-in 150ms;
+}
+
+.prestamos-container {
+  width: 25rem;
+  color: var(--textColor);
+}
+
+.prestamo,
+.prestamos-header {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+}
+
+.prestamos-header {
+  padding-inline: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.prestamo {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(168, 168, 168, 0.4);
+}
+
+.prestamo p {
+  margin-bottom: 0;
+}
+
+.prestamo-vacio {
+  padding: 1rem;
+  background-color: rgba(168, 168, 168, 0.4);
+  border-radius: 5px;
+}
+
+.prestamo-vacio p {
+  margin: 0;
+}

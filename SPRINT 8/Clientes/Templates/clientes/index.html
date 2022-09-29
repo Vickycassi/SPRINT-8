@@ -1,0 +1,236 @@
+{% extends 'Clientes/base.html' %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'Clientes/styles/style.css' %}" />
+{% endblock %} {% block content %}
+<!-- Header -->
+<header>
+  <div class="header-img">
+    <img src="{% static 'Clientes/img/Fondo-banco-ITBA.png' %}" alt="" />
+  </div>
+  <div class="header-container">
+    <div class="header-info">
+      <h1 class="header-info-100">100%</h1>
+      <h1 class="header-info-seguros">SEGUROS TRANSPARENTES</h1>
+    </div>
+    <div class="header-tarjeta">
+      <img src="{% static 'Clientes/img/Tarjeta-ITBA-mirror.png' %}" alt="" />
+    </div>
+  </div>
+</header>
+<!-- Cotización Dólar -->
+<section class="cotizacion">
+  <h2 class="subtitulo">Cotización dólar hoy</h2>
+  <div class="cotizacion-container">
+    <div class="cotizacion-card">
+      <div class="cotizacion-header">
+        <div class="cotizacion-icon">
+          <img src="{% static 'Clientes/img/cotizacion/b1.png' %}" alt="" />
+        </div>
+        <h3 class="cotizacion-titulo">Dolar Oficial</h3>
+      </div>
+      <div class="cotizacion-body">
+        <p>COMPRA: <span class="cotizacion-compra"></span></p>
+        <p>VENTA: <span class="cotizacion-venta"></span></p>
+      </div>
+      <div class="cotizacion-footer">
+        <p>VARIACIÓN: <span class="cotizacion-variacion"></span></p>
+        <div class="cotizacion-flecha"></div>
+      </div>
+    </div>
+    <div class="cotizacion-card">
+      <div class="cotizacion-header">
+        <div class="cotizacion-icon">
+          <img src="{% static 'Clientes/img/cotizacion/b2.png' %}" alt="" />
+        </div>
+        <h3 class="cotizacion-titulo">Dolar Blue</h3>
+      </div>
+      <div class="cotizacion-body">
+        <p>COMPRA: <span class="cotizacion-compra"></span></p>
+        <p>VENTA: <span class="cotizacion-venta"></span></p>
+      </div>
+      <div class="cotizacion-footer">
+        <p>VARIACIÓN: <span class="cotizacion-variacion"></span></p>
+        <div class="cotizacion-flecha"></div>
+      </div>
+    </div>
+    <div class="cotizacion-card">
+      <div class="cotizacion-header">
+        <div class="cotizacion-icon">
+          <img src="{% static 'Clientes/img/cotizacion/b3.png' %}" alt="" />
+        </div>
+        <h3 class="cotizacion-titulo">Dolar Contado con Liqui</h3>
+      </div>
+      <div class="cotizacion-body">
+        <p>REFERENCIA: <span class="cotizacion-venta"></span></p>
+      </div>
+      <div class="cotizacion-footer">
+        <p>VARIACIÓN: <span class="cotizacion-variacion"></span></p>
+        <div class="cotizacion-flecha"></div>
+      </div>
+    </div>
+    <div class="cotizacion-card">
+      <div class="cotizacion-header">
+        <div class="cotizacion-icon">
+          <img src="{% static 'Clientes/img/cotizacion/b4.png' %}" alt="" />
+        </div>
+        <h3 class="cotizacion-titulo">Dolar Bolsa</h3>
+      </div>
+      <div class="cotizacion-body">
+        <p>REFERENCIA: <span class="cotizacion-compra"></span></p>
+      </div>
+      <div class="cotizacion-footer">
+        <p>VARIACIÓN: <span class="cotizacion-variacion"></span></p>
+        <div class="cotizacion-flecha"></div>
+      </div>
+    </div>
+    <div class="cotizacion-card">
+      <div class="cotizacion-header">
+        <div class="cotizacion-icon">
+          <img src="{% static 'Clientes/img/cotizacion/b5.png' %}" alt="" />
+        </div>
+        <h3 class="cotizacion-titulo">Dolar Turista</h3>
+      </div>
+      <div class="cotizacion-body">
+        <p>VENTA: <span class="cotizacion-venta"></span></p>
+      </div>
+      <div class="cotizacion-footer">
+        <p>VARIACIÓN: <span class="cotizacion-variacion"></span></p>
+        <div class="cotizacion-flecha"></div>
+      </div>
+    </div>
+  </div>
+  <button class="cotizacion-btn">Actualizar Cotización</button>
+</section>
+<!-- Cards -->
+<section class="cards">
+  <h2 class="subtitulo">Mi <span class="itbank">ITBANK</span></h2>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-img">
+        <img
+          src="{% static 'Clientes/img/card/Vector.png' %}"
+          class="card-img-top"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Cobrá en el acto con la mejor comisión</h5>
+      </div>
+      <a href="#" class="card-link">Más Información</a>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img
+          src="{% static 'Clientes/img/card/Vector (3).png' %}"
+          class="card-img-top"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Todo desde un mismo lugar</h5>
+      </div>
+      <a href="#" class="card-link">Descargar App</a>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img
+          src="{% static 'Clientes/img/card/Vector (2).png' %}"
+          class="card-img-top"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Créditos pensados para vos</h5>
+      </div>
+      <a href="#" class="card-link">ITBA Créditos</a>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img
+          src="{% static 'Clientes/img/card/Vector (1).png' %}"
+          class="card-img-top"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Protegé lo que mas querés</h5>
+      </div>
+      <a href="#" class="card-link">Conoce Más</a>
+    </div>
+  </div>
+</section>
+<!-- Ser Parte Section -->
+<section class="ser-parte">
+  <h2 class="subtitulo">
+    ¿Cómo puedo ser parte de <span class="itbank">ITBANK</span>?
+  </h2>
+  <div class="parte-container">
+    <div class="parte-section">
+      <div class="parte-card">
+        <h3 class="parte-num">1.</h3>
+        <p>Descargá la app desde la Play Store o desde Apple Store.</p>
+        <div class="parte-icon">
+          <img src="{% static 'Clientes/img/icons/Download.svg' %}" alt="" />
+        </div>
+      </div>
+      <div class="parte-card">
+        <h3 class="parte-num">2.</h3>
+        <p>
+          Completá el registro con tus datos desde la app y accede a tu tarjeta
+          virtual.
+        </p>
+        <div class="parte-icon">
+          <img src="{% static 'Clientes/img/icons/userPlus.svg' %}" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="parte-section">
+      <div class="parte-card">
+        <h3 class="parte-num">3.</h3>
+        <p>
+          Recibí tu tarjeta dentro de los 15 dias habiles, gratis y en todo el
+          pais.
+        </p>
+        <div class="parte-icon">
+          <img src="{% static 'Clientes/img/icons/paquete.svg' %}" alt="" />
+        </div>
+      </div>
+      <div class="parte-card">
+        <h3 class="parte-num">4.</h3>
+        <p>Activá tu tarjeta y cargá saldo para empezar a usarla.</p>
+        <div class="parte-icon">
+          <img src="{% static 'Clientes/img/icons/btnOn.svg' %}" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Cargar Saldo Section -->
+<section class="cargar-saldo">
+  <h2 class="subtitulo">
+    ¿Cómo cargo saldo para usar <span class="itbank">ITBANK</span>?
+  </h2>
+  <div class="cargar-container">
+    <div class="cargar-card">
+      <div class="cargar-img">
+        <img src="{% static 'Clientes/img/icons/tarjeta.svg' %}" alt="" />
+      </div>
+      <p>Transferencia CBU/CVU</p>
+    </div>
+    <div class="cargar-card">
+      <div class="cargar-img">
+        <img src="{% static 'Clientes/img/icons/billetera.svg' %}" alt="" />
+      </div>
+      <p>Efectivo</p>
+    </div>
+  </div>
+</section>
+<!-- Banco Digital Section -->
+<section class="banco-digital">
+  <h2 class="cero-pesos"><span class="pesos">$</span>0</h2>
+  <h2>Un banco 100% digital y sin los costos de los bancos tradicionales</h2>
+  <p>
+    No tenemos costos de apetura ni de mantenimiento. Tampoco cobramos
+    comisiones y las transferencias son gratuitas
+  </p>
+  <a href="{% url 'login' %}">
+    <button class="btn-registrate">¡Registrate Ahora!</button>
+  </a>
+</section>
+<script src="{% static 'Clientes/js/index.js' %}"></script>
+{% include "Clientes/footer.html" %} {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'Clientes/base.html' %} {% load static %} {% block title
+%}Registrarse | ITBANK{% endblock %} {% block styles %}
+<link rel="stylesheet" href="{% static 'Login/styles/login.css' %}" />
+{% endblock %} {% block content %}
+<!-- Form -->
+<section class="form-container">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-img">
+      <img
+        src="{% static 'Clientes/img/icons/ITBA-logo.svg' %}"
+        alt="Logo ITBA"
+      />
+    </div>
+    {% for field in form %}
+    <div class="input-grupo">
+      {{ field }} {{ field.label_tag }} {% for error in field.errors %}
+      <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+    <a class="form-link" href="{% url 'login' %}">¿Ya tenés una cuenta?</a>
+    <button class="form-btn" type="submit">Registrarse</button>
+  </form>
+</section>
+<!-- <script src="{% static 'Login/js/login.js' %}"></script> -->
+{% endblock %}
